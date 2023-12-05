@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Compra de Boletos</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="CompraBoletos.css" />
+
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a
+                class="nav-link text-white"
+                href="http://127.0.0.1:5500/RolAdministrador/HomeAdministrador.html"
+                >Inicio</a
+              >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Usuarios
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Seguridad/Administracion-CrearUsuarios.html"
+                    >Crear Usuarios</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Seguridad/Administracion-VerUsuarios.html"
+                    >Ver Usuarios</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Administración
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-Aerolineas.html"
+                    >Aerolíneas</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-Paises.html"
+                    >Países</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-PuertasAeropuerto.html"
+                    >Puertas del Aeropuerto</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-CompraBoletos.html"
+                    >Compras de Boletos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-Vuelos.html"
+                    >Vuelos</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Consecutivos/Administracion-VerConsecutivo.html"
+                    >Consecutivos</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle text-white"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Consultas
+              </a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Consultas/Administracion-BitacoraSistema.html"
+                    >Bitácora del Sistema</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Consultas/Administracion-Errores.html"
+                    >Errores</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Consultas/Administracion-AerolineasPaises.html"
+                    >Aeroíneas por país</a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="dropdown-item"
+                    href="http://127.0.0.1:5500/RolAdministrador/Consultas/Administracion-PuertasActivas.html"
+                    >Puertas Activas</a
+                  >
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a
+                class="nav-link text-white"
+                href="http://127.0.0.1:5500/RolAdministrador/PerfilAdministrador.html"
+                >Perfil</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+
+
+    <div class="container">
+      <br>      <h1>Datos de reserva</h1>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <h2>Preferencias</h2>
+          <h6>Elige opción de asiento</h6>
+          <select class="inputcompradeboletos" name="asiento">
+            <option value="ventana">Elija una opción</option>
+            <option value="ventana">Ventana</option>
+            <option value="pasillo">Pasillo</option>
+            <option value="centro">Centro</option>
+          </select>
+          <br /><br />
+          <h2>Información de cliente</h2>
+          <h6>Nombre de pasajero</h6>
+          <input
+            class="inputcompradeboletos"
+            type="text"
+            name="nombre"
+            placeholder="Escribe tu nombre"
+          />
+          <h6>Correo electrónico</h6>
+          <input
+            class="inputcompradeboletos"
+            type="email"
+            name="email"
+            placeholder="Escribe tu email"
+          />
+          <h6>Teléfono</h6>
+          <input
+            class="inputcompradeboletos"
+            type="tel"
+            name="telefono"
+            placeholder="Escribe tu teléfono"
+          />
+          <br /><br />
+          <h2>Detalles de pago</h2>
+          <h6>Nombre de titular de la tarjeta</h6>
+          <input
+            class="inputcompradeboletos"
+            type="text"
+            name="titular"
+            placeholder="Escribe el nombre del titular"
+          />
+          <h6>Número de tarjeta</h6>
+          <input
+            class="inputcompradeboletos"
+            type="number"
+            name="numero"
+            placeholder="Escribe el número de la tarjeta"
+          />
+          <h6>Fecha de vencimiento</h6>
+          <select class="inputcompradeboletos" name="mes">
+            <option value="00">Mes</option>
+            <option value="01">Enero</option>
+            <option value="02">Febrero</option>
+            <option value="03">Marzo</option>
+            <option value="04">Abril</option>
+            <option value="05">Mayo</option>
+            <option value="06">Junio</option>
+            <option value="07">Julio</option>
+            <option value="08">Agosto</option>
+            <option value="09">Septiembre</option>
+            <option value="10">Octubre</option>
+            <option value="11">Noviembre</option>
+            <option value="12">Diciembre</option>
+          </select>
+          <select class="inputcompradeboletos" name="año">
+            <option value="00">Año</option>
+            <option value="2023">2023</option>
+            <option value="2024">2024</option>
+            <option value="2025">2025</option>
+            <option value="2026">2026</option>
+            <option value="2027">2027</option>
+          </select>
+          <h6>CVV</h6>
+          <input
+            class="inputcompradeboletos"
+            type="number"
+            name="cvv"
+            placeholder="Escribe el CVV"
+          />
+          <br><br>
+        </div>
+        <br><br>
+        <div class="col-md-6">
+          <h2>Facturación</h2>
+          <div class="facturacion">
+            <p><strong>Precio:</strong> $500</p>
+            <p><strong>Destino:</strong> San José</p>
+            <p><strong>Fecha:</strong> 15/12/2023</p>
+            <p><strong>Hora:</strong> 10:00 a.m.</p>
+          </div>
+          <input type="submit" value="Comprar boleto" />
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

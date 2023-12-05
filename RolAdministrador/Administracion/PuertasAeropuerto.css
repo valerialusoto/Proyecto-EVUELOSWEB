@@ -1,0 +1,99 @@
+/* NavBar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #272f3f;
+  }
+  
+  body {
+    padding-top: 56px;
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #272F3F;
+    color: black;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+ 
+}
+
+
+/* Estilo de la celda con la clase code */
+.code {
+    background-color: #ff0000; /* Cambiado a rojo */
+}
+
+/* Estilo de la celda con la clase number */
+.number {
+    background-color: #ff0000; /* Cambiado a rojo */
+}
+
+/* Estilo de la celda con la clase detail */
+.detail {
+    background-color: #ff0000; /* Cambiado a rojo */
+}
+
+
+
+
+h1{
+    color: white;
+    text-align: center;
+}
+  
+  .row {
+    margin-bottom: 10px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  label {
+    font-weight: normal;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+
+
+   /* Estilo del contenedor del grid */
+   .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas iguales */
+    grid-gap: 10px; /* Espacio entre las celdas */
+    padding: 10px; /* Espacio alrededor del contenedor */
+}
+
+/* Estilo de las celdas del grid */
+.grid-item {
+    background-color: #f0f0f0; /* Color de fondo */
+    border: 1px solid #cccccc; /* Borde */
+    padding: 10px; /* Espacio alrededor del contenido */
+    font-size: 16px; /* Tamaño de la fuente */
+}
+
+/* Estilo de los botones */
+.button {
+    display: inline-block; /* Mostrar en línea */
+    margin: 10px; /* Margen alrededor */
+    padding: 10px 20px; /* Espacio alrededor del texto */
+    background-color: #00a0ff; /* Color de fondo */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    cursor: pointer; /* Cambiar el cursor al pasar el ratón */
+}
+
+/* Estilo del botón cerrar */
+.button-close {
+    background-color: #ff0000; /* Color de fondo rojo */
+}
+  

@@ -1,0 +1,69 @@
+/* NavBar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #272f3f;
+}
+
+body {
+  padding-top: 56px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+label {
+  font-weight: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+
+
+/*Compra de boletos*/
+
+
+h2 {
+  color: #434d5c;
+  font-family: Arial, sans-serif;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+h6 {
+  color: #8b9aa5;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.inputcompradeboletos {
+  border: 2px ;
+  border-radius: 5px;
+  padding: 10px;
+  width: 300px;
+
+}
+input[type="submit"] {
+  background-color: #262f40;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+/**/

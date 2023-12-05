@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Errores</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">    <link rel="stylesheet" href="AdministracionStyles.css">
+    <link rel="stylesheet" href="Errores.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="http://127.0.0.1:5500/RolAdministrador/HomeAdministrador.html">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuarios
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Seguridad/Administracion-CrearUsuarios.html">Crear Usuarios</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Seguridad/Administracion-VerUsuarios.html">Ver Usuarios</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Administración
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-Aerolineas.html">Aerolíneas</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-Paises.html">Países</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-PuertasAeropuerto.html">Puertas del Aeropuerto</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-CompraBoletos.html">Compras de Boletos</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Administracion/Administracion-Vuelos.html">Vuelos</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Consecutivos/Administracion-VerConsecutivo.html">Consecutivos</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Consultas
+                        </a>
+                        <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Consultas/Administracion-BitacoraSistema.html">Bitácora del Sistema</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Consultas/Administracion-Errores.html">Errores</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Consultas/Administracion-AerolineasPaises.html">Aeroíneas por país</a></li>
+                        <li><a class="dropdown-item" href="http://127.0.0.1:5500/RolAdministrador/Consultas/Administracion-PuertasActivas.html">Puertas Activas</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="http://127.0.0.1:5500/RolAdministrador/PerfilAdministrador.html">Perfil</a>
+                    </li>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+  
+
+
+
+    <div class="container">
+      <!-- Sección de Consulta de Errores -->
+      <div class="error-section">
+          <h1>Consulta de Errores</h1>
+          <form id="errorForm">
+              <label for="errorFechaInicio">Fecha de Inicio:</label>
+              <input type="date" id="errorFechaInicio" name="errorFechaInicio">
+              <label for="errorFechaFinal">Fecha Final:</label>
+              <input type="date" id="errorFechaFinal" name="errorFechaFinal">
+              <button type="button" onclick="search()">Buscar</button>
+          </form>
+      </div>
+  </div>
+
+  <!-- Sección de Lista de Errores fuera del contenedor -->
+  <div class="error-list-section">
+      <table id="errorGrid" class="data-table">
+          <thead>
+              <tr>
+                  <th>Fecha y Hora</th>
+                  <th>Número de Error</th>
+                  <th>Mensaje de Error</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Resultados se insertarán aquí dinámicamente -->
+          </tbody>
+      </table>
+  </div>
+    
+        
+
+       
+      
+      <script>
+        function search() {
+
+      
+          // Example data
+          const data = [
+            { fechaHora: '2023-11-29 15:10:50', numeroError: '404', mensajeError: 'Página no encontrada' },
+            { fechaHora: '2023-11-29 15:12:30', numeroError: '500', mensajeError: 'Error interno del servidor' },
+            // Add more data as needed
+          ];
+      
+          const errorGrid = document.getElementById('errorGrid').getElementsByTagName('tbody')[0];
+          errorGrid.innerHTML = '';
+      
+          data.forEach(item => {
+            const row = errorGrid.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+      
+            cell1.textContent = item.fechaHora;
+            cell2.textContent = item.numeroError;
+            cell3.textContent = item.mensajeError;
+          });
+        }
+      </script>
+
+            
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>

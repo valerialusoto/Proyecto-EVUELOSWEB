@@ -1,0 +1,76 @@
+/* NavBar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #272f3f;
+}
+
+body {
+  padding-top: 56px;
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+label {
+  font-weight: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+
+/*tabla usuarios*/
+body {
+  font-family: Arial, sans-serif;
+}
+
+.ver-usuarios {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.lista-usuarios {
+  list-style: none;
+  padding: 0;
+}
+
+.usuario {
+  text-decoration: none;
+  color: #0366d6; /* enlace azul como en GitHub */
+  cursor: pointer;
+}
+
+.info-usuario {
+  margin-top: 20px;
+}
+
+.checkbox-list {
+  list-style: none;
+  padding: 0;
+}
+
+.checkbox-list li {
+  margin-bottom: 10px;
+}
+
+.btn-actualizar {
+  background-color: #28a745; /* verde como en Bootstrap */
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}

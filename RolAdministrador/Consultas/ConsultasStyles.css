@@ -1,0 +1,96 @@
+/* NavBar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #272F3F;
+  z-index: 1000; /* Ajusta el valor según sea necesario */
+}
+
+
+body {
+  padding-top: 56px; 
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+label {
+  font-weight: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+
+/*Bitácora*/
+
+.bitacora-container {
+  max-width: 800px;
+  margin: 80px auto 0; /* Ajusta el valor según la altura de tu navbar y la separación deseada */
+}
+
+.bitacora-card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.3);
+  border-radius: 5px;
+}
+
+.bitacora-card-title {
+  color: #2c3e50;
+  text-align: center;
+}
+
+.form-label {
+  font-weight: bold;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: #272F3F;
+  color: white;
+}
+
+.btn:hover {
+  background-color: #ffa564;
+}
+
+.table {
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.table th {
+  background-color: #272F3F;
+  color: white;
+  padding: 10px;
+}
+
+.table td {
+  padding: 10px;
+}
+
+
+/* Agrega estos estilos al final de tu archivo CSS o en el encabezado HTML */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+.bitacora-container {
+  margin-top: 80px; /* Ajusta el valor según la altura de tu navbar y la separación deseada */
+}

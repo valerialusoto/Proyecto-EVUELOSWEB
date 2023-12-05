@@ -1,0 +1,72 @@
+/* NavBar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #272f3f;
+  }
+  
+  body {
+    padding-top: 56px;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  .row {
+    margin-bottom: 10px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  label {
+    font-weight: normal;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+
+
+  /**/
+
+  main {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    }
+
+    
+h2 {
+    text-align: center;
+}
+    
+    .gate-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centra las tarjetas horizontalmente */
+    }
+    
+    .gate-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Agrega un efecto de sombra */
+    }
+    
+    /* Estilo para puertas abiertas */
+    .gate-card.open {
+    background-color: #8eff8e; /* Verde claro */
+    }
+    
+    /* Estilo para puertas cerradas */
+    .gate-card.closed {
+    background-color: #ff8e8e; /* Rojo claro */
+    }

@@ -1,0 +1,137 @@
+/* NavBar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #272f3f;
+  }
+  
+  body {
+    padding-top: 56px;
+  }
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  .row {
+    margin-bottom: 10px;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  label {
+    font-weight: normal;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+  }
+
+  
+/*Aerolineas*/
+
+h1 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #272f3f;
+    padding: 40px;
+  }
+  
+  .form {
+    width: 60%;
+    max-width: 400px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+  
+  .input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    height: 30px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+      flex-direction: column;
+      margin-bottom: 8px;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  button {
+    width: 100px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  #borrar {
+    background-color: #ff0000;
+  }
+  
+  #aceptar {
+    background-color: #00ff00;
+  }
+  
+  #cerrar {
+    background-color: #0000ff;
+  }
+  
+  .image-group {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #cargar {
+    margin-right: 20px;
+  }
+  
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+  }
+  
+  .grid {
+    width: 80%;
+    max-width: 600px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-gap: 10px;
+    margin-top: 20px;
+    background-color: white;
+  }
+  
