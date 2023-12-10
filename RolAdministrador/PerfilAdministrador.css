@@ -1,4 +1,37 @@
 
+/* NavBar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #272f3f;
+}
+
+body {
+    padding-top: 56px;
+}
+
+.container {
+    margin-top: 20px;
+}
+
+.row {
+    margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+label {
+    font-weight: normal;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
 
 /* Estilos para la sección de perfil */
 

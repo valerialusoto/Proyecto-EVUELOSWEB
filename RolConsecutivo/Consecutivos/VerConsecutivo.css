@@ -1,0 +1,42 @@
+
+
+
+
+/*NavBar*/
+
+.navbar {
+    position: fixed; 
+    top: 0; 
+    left: 0; 
+    right: 0; 
+    background-color: #272F3F; 
+  }
+  
+  
+  body {
+    padding-top: 56px; /* Adjusted for the fixed navbar height */
+  }
+  
+  
+  
+  .container {
+    margin-top: 20px;
+  }
+  
+  .row {
+    margin-bottom: 10px;
+  }
+  
+  /* Adjust styles for checkboxes and labels */
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+  
+  label {
+    font-weight: normal;
+  }
+  
+  
+  body {
+    font-family: Arial, sans-serif;
+  }
