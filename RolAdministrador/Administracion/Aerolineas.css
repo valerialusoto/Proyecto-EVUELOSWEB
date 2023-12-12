@@ -47,19 +47,19 @@ h1 {
   align-items: center;
   background-color: #272f3f;
   padding: 40px;
-  ;width: 900px;
+  width: 900px;
 }
 
 .form {
-  width: 60%;
-  max-width: 400px;
+  width: 85%;
+  max-width: 600px;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Alinea los elementos al centro */
+  align-items: center;
 }
 
 .input-group {
@@ -110,6 +110,13 @@ button {
   cursor: pointer;
   border-radius: 5px;
   text-align: center;
+
+}
+
+#labelImagen:hover
+{
+  
+  background-color:#ffa564;
 }
 
 #cargar {
@@ -141,9 +148,22 @@ img {
 }
 
 #guardar {
-  background-color: #00ff00;
+  background-color: #272f3f;
+}
+
+#guardar:hover
+{
+
+  background-color: green;
 }
 
 #cancelar {
+  background-color: #272f3f;
+}
+
+#cancelar:hover
+{
+
   background-color: red;
 }
+

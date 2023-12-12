@@ -57,20 +57,36 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 0 50px 10px rgba(255, 165, 100, 0.8);
+    box-shadow: 0 0 300px 10px rgba(255, 165, 100, 0.8);
     animation: pulse 1.5s infinite alternate; 
   }
   
   @keyframes pulse {
     to {
-      box-shadow: 0 0 30px 3px rgba(255, 165, 100, 0.8);
+      box-shadow: 0 0 80px 15px rgba(255, 165, 100, 0.8);
     }
   }
     
 
-  h3, h2{
+
+  .login-container h2 {
+    position: absolute; 
+    left: 50%; 
+    transform: translateX(-50%); 
+    letter-spacing: 13px;
     color: white;
-    text-align: center;
-  }
+    white-space: nowrap;
+    top: 180px;
+}
+
+.login-container h3 {
+  position: absolute; 
+  left: 50%; 
+  transform: translateX(-50%); 
+  letter-spacing: 10px;
+  color: white;
+  white-space: nowrap;
+}
+
   
   

@@ -64,40 +64,46 @@
     </nav>
 
 <br><br>
-    <div class="container">
+<div class="container">
+ 
+    <div class="form">
         <h1>Registro de Países</h1>
+        <br>
+        <div class="image-group">
+            <img id="imagenVista" src="" alt="" />
+            <input type="file" id="imagen" accept="image/*" style="display: none;" />
+            <br>
 
-     
-
-        <div class="form">
-            <div class="image-group">
-                <label for="imagen" id="labelImagen">Cargar imagen</label>
-                <input type="file" id="imagen" accept="image/*" style="display: none;" />
-                <img id="imagenVista" src="" alt="" />
-            </div>
-            <div class="input-group">
-                <label for="codigo">Código del país</label>
-                <input type="text" id="codigo" disabled />
-            </div>
-            <div class="input-group">
-                <label for="nombre">Nombre del país</label>
-                <input type="text" id="nombre" required />
-            </div>
-      
-
+            <label for="imagen" id="labelImagen">Cargar imagen</label>
+        </div>
+        <div class="input-group">
+            <br>
+            <label for="codigo">Código del país</label>
+            <input type="text" id="codigo" disabled />
+        </div>
+        <div class="input-group">
+            <label for="nombre">Nombre del país</label>
+            <input type="text" id="nombre" required />
+        </div>
+        <div class="button-group">
             <button id="guardar" onclick="guardar()">Aceptar</button>
             <button id="borrar" onclick="borrar()">Borrar</button>
             <button id="cerrar" onclick="cerrar()">Cerrar</button>
         </div>
-        <div class="grid">
-            <!-- Aquí se mostrarán los elementos de la lista de países -->
-        </div>
     </div>
+    <div class="grid">
+        <!-- Aquí se mostrarán los elementos de la lista de países -->
+    </div>
+</div>
 
-    <script>function generarCodigo() {
-        // Esta función generará un código único para cada país.
-        // Puedes implementarla como quieras.
+    <script>
+    let lastId = 0;
+
+    function generarCodigo() {
+        lastId++; // incrementa el ID
+        return 'PAIS' + lastId.toString().padStart(5, '0');
     }
+    
     
     function guardar() {
         var codigo = document.getElementById('codigo').value;

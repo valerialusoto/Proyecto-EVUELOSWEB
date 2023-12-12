@@ -91,10 +91,8 @@ body {
   }
   
   button.btn:hover {
-    
-      background-color: #ffa564;
-    }
-  
+    background-color: #ffa564;
+  }
   
  
 
@@ -125,8 +123,6 @@ h1 {
 
 
 
-
-
 #labelImagen {
   display: inline-block;
   background-color: #434E5D;
@@ -137,16 +133,10 @@ h1 {
   text-align: center;
 }
 
-#labelImagen:hover{
-  background-color: #ffa564;
-}
-
 #cargar {
   margin-top: 20px;
   background-color: #272f3f; 
 }
-
-
 
 img {
   width: 150px;
@@ -155,19 +145,16 @@ img {
   border: 2px solid ;
   border-radius: 50%;
 }
-
-
-
 .btn {
-  padding: 10px;
-  margin: 5px;
-  cursor: pointer;
   margin-bottom: 10px; 
-}
 
-button.btn.btn-logout:hover {
-  background-color: red;
 }
 
 
 
+
+
+  
+  
+  
+  

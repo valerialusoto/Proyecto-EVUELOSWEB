@@ -52,10 +52,11 @@
   color: white;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 800px;
 }
 
 h1 {
-  font-size: 28px;
+ 
   margin-bottom: 20px;
 }
 
@@ -77,7 +78,7 @@ textarea {
 button {
   width: 100%;
   padding: 10px;
-  background-color: #3CBC8D;
+  background-color: #272f3f;
   color: white;
   border: none;
   border-radius: 4px;
@@ -139,7 +140,7 @@ input:disabled {
 
 button {
     padding: 10px;
-    background-color: #3CBC8D;
+    background-color: #434E5D;
     color: white;
     border: none;
     border-radius: 4px;
