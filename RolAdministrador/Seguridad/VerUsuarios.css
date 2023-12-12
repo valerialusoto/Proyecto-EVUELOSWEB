@@ -33,44 +33,119 @@ body {
 }
 
 
-/*tabla usuarios*/
+
+
 body {
+  margin: 0;
   font-family: Arial, sans-serif;
 }
 
-.ver-usuarios {
+.container {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 20px auto; 
+  padding: 20px;
+  background-color: #272F3F;
+  color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; 
 }
 
-.lista-usuarios {
-  list-style: none;
-  padding: 0;
+h1 {
+  font-size: 28px;
+  margin-bottom: 20px;
 }
 
-.usuario {
-  text-decoration: none;
-  color: #0366d6; /* enlace azul como en GitHub */
-  cursor: pointer;
-}
-
-.info-usuario {
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
   margin-top: 20px;
 }
 
-.checkbox-list {
-  list-style: none;
-  padding: 0;
+.data-table th, .data-table td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
 }
 
-.checkbox-list li {
-  margin-bottom: 10px;
-}
-
-.btn-actualizar {
-  background-color: #28a745; /* verde como en Bootstrap */
+.data-table th {
+  background-color: #434E5D;
   color: white;
-  padding: 8px 16px;
+}
+
+button {
+  width: 300px;
+  padding: 10px;
+  background-color: #434E5D;
+  color: white;
   border: none;
+  border-radius: 4px;
   cursor: pointer;
+
+}
+
+button:hover {
+  background-color: #ffa564;
+}
+
+.crearnuevo-button{
+width: 100%;
+  padding: 10px;
+  background-color: #ffa564;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s; 
+
+}
+
+.crearnuevo-button:hover{
+
+  background-color: #ff8533; 
+  color: #fff; 
+  transform: scale(1.1); 
+}
+
+
+select {
+  position: relative;
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffa564;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+}
+
+select:hover {
+  background-color: #ffa564;
+}
+
+select option {
+  padding: 10px;
+  background-color: #272F3F;
+  color: white;
+}
+
+.action-cell {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.action-cell button {
+  margin-right: 10px;
+
+}
+
+.action-cell select {
+  width: 150px; /* Ajusta este valor para cambiar el tamaño del menú desplegable */
 }

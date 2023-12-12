@@ -60,35 +60,14 @@ body {
     text-align: center;
   }
   
-  .circle {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    margin: 0 auto;
-    background-size: cover;
-    background-position: center;
-    margin-bottom: 20px;
-    background-color: red;
-  }
-  
-  .input-field {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-  
-  }
-  
-  label {
-    margin-right: 10px;
-    font-size: 16px;
-  }
-  
+ 
+
   input {
     width: 100%;
-    padding: 8px;
+    padding: 9px;
     border: 1px solid white;
     border-radius: 4px;
-    margin-top: 5px;
+
   }
   
   .row {
@@ -115,7 +94,65 @@ body {
     background-color: #2E8B57;
   }
   
-  
+ 
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #272f3f;
+  padding: 40px;
+  ;width: 900px;
+}
+
+
+
+
+
+.button-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+}
+
+
+
+#labelImagen {
+  display: inline-block;
+  background-color: #434E5D;
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  text-align: center;
+}
+
+#cargar {
+  margin-top: 20px;
+  background-color: #272f3f; 
+}
+
+img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 2px solid ;
+  border-radius: 50%;
+}
+.btn {
+  margin-bottom: 10px; 
+
+}
+
+
+
+
   
   
   
