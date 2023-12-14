@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+    background-color: #f0f0f0; /* Agrega un color de fondo suave */
+}
+
+#content {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    filter: blur(8px);
+    z-index: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px; /* Cambia la altura para centrar verticalmente el formulario */
+    position: relative;
+    z-index: 2;
+}
+
+.login-form {
+    width: 500px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 15px; /* Agrega bordes redondeados al formulario */
+   
+    position: relative;
+}
+
+.login-form h2, .login-form p {
+    text-align: center;
+}
+
+.login-form input[type="text"], .login-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Agrega un borde a los campos de entrada */
+    border-radius: 5px;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    color: #fff;
+    background-color: #4CAF50;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login-form button:hover {
+    background-color: #45a049;
+}
+
+.login-form a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+.login-form a:hover {
+    text-decoration: underline;
+}
+
+.btn-close.custom-btn {
+    --bs-close-bg: white;
+    --bs-close-color: black;
+    --bs-close-hover-color: red;
+    --bs-close-hover-bg: white;
+    --bs-close-width: 1em;
+    --bs-close-height: 1em;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    color: blue;
+    background-color: white;
+    width: 30px;
+    height: 30px;
+}

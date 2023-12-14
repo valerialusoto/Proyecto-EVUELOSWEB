@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/HomePage.css">
+</head>
+
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .activity-list {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .activity-list h1 {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .activity-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .activity-list.Lugares .activity {
+        flex: 1;
+        max-width: calc(33.33% - 30px);
+        transition: transform 0.5s ease-in-out; 
+    }
+
+    .activity {
+        background-color: white;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1;
+        margin: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-height: 300px;
+        overflow: hidden;
+        flex-basis: calc(33.33% - 20px);
+    }
+
+    .activity:hover {
+        transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse por encima */
+    }
+
+    .activity-list h1 {
+        margin-bottom: 10px;
+        font-family: Gardena;
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .activity h2 {
+        margin-bottom: 10px;
+        font-family: gardena;
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-family: vacation;
+        text-align: center;
+        color: darkgray;
+        letter-spacing: 5px;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #003e1f;
+        font-family: Arial;
+    }
+
+    .navbar .menu {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .navbar a {
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .navbar a.right {
+        margin-left: auto;
+    }
+
+    .footer {
+        background-color: #003e1f;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+</style>
+
+<body>
+
+    <div class="navbar">
+        <div class="menu">
+            <a href="#reservar">Reservar vuelo</a>
+            <a href="#info">Información de vuelos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#FaQ">FaQs</a>
+            <a href="#aboutus">Sobre Nosotros</a>
+            <a href="http://127.0.0.1:5500/RolCliente/Login.html" id="login-btn" class="right">Iniciar sesión</a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <h4>INSPIRACIÓN DE VIAJE</h4>
+
+    <div class="activity-list">
+        <h1>Qué hacer en Emiratos Árabes Unidos</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>Visitar el Burj Khalifa</h2>
+                <p>Explora la torre más alta del mundo, el Burj Khalifa, y disfruta de impresionantes vistas de Dubái desde el mirador.</p>
+            </div>
+            <div class="activity">
+                <h2>Recorrer el Zoco de Dubái</h2>
+                <p>Sumérgete en la cultura local explorando el Zoco de Dubái, conocido por sus tiendas tradicionales y artesanías.</p>
+            </div>
+            <div class="activity">
+                <h2>Disfrutar del desierto</h2>
+                <p>Vive una experiencia única en el desierto, con safaris, paseos en camello y cenas bajo las estrellas.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="activity-list">
+        <h1>Dónde comer en Emiratos Árabes Unidos</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>Pierchic</h2>
+                <p>Prueba mariscos frescos en Pierchic, un restaurante construido sobre el agua con vistas panorámicas en Dubái.</p>
+            </div>
+            <div class="activity">
+                <h2>Al Fanar Restaurant</h2>
+                <p>Experimenta la cocina emiratí en Al Fanar Restaurant, que ofrece platos tradicionales en un ambiente auténtico.</p>
+            </div>
+            <div class="activity">
+                <h2>At.mosphere</h2>
+                <p>Disfruta de una experiencia culinaria de alta gama en At.mosphere, ubicado en el Burj Khalifa con vistas espectaculares.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="activity-list">
+        <h1>Lugares para hospedarse en Emiratos Árabes Unidos</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>Atlantis The Palm, Dubái</h2>
+                <p>Alojate en el lujoso Atlantis The Palm en Dubái, con acceso al parque acuático Aquaventure y vistas al Golfo Pérsico.</p>
+            </div>
+            <div class="activity">
+                <h2>Emirates Palace, Abu Dabi</h2>
+                <p>Experimenta la opulencia en el Emirates Palace en Abu Dabi, conocido por su arquitectura impresionante y servicios de lujo.</p>
+            </div>
+            <div class="activity">
+                <h2>Al Maha, A Luxury Collection Desert Resort</h2>
+                <p>Vive la tranquilidad del desierto alojándote en Al Maha, A Luxury Collection Desert Resort, con villas privadas y vistas al desierto.</p>
+            </div>
+        </div>
+    </div>
+    
+
+    <br><br><br>
+
+    <div class="footer">
+        <p>© 2023 EVuelosWeb</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

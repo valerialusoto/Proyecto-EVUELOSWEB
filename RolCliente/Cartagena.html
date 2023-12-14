@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/HomePage.css">
+</head>
+
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .activity-list {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .activity-list h1 {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .activity-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .activity-list.Lugares .activity {
+        flex: 1;
+        max-width: calc(33.33% - 30px);
+        transition: transform 0.5s ease-in-out; 
+    }
+
+    .activity {
+        background-color: white;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1;
+        margin: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-height: 300px;
+        overflow: hidden;
+        flex-basis: calc(33.33% - 20px);
+    }
+
+    .activity:hover {
+        transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse por encima */
+    }
+
+    .activity-list h1 {
+        margin-bottom: 10px;
+        font-family: Gardena;
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .activity h2 {
+        margin-bottom: 10px;
+        font-family: gardena;
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-family: vacation;
+        text-align: center;
+        color: darkgray;
+        letter-spacing: 5px;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #003e1f;
+        font-family: Arial;
+    }
+
+    .navbar .menu {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .navbar a {
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .navbar a.right {
+        margin-left: auto;
+    }
+
+    .footer {
+        background-color: #003e1f;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+</style>
+
+<body>
+
+    <div class="navbar">
+        <div class="menu">
+            <a href="#reservar">Reservar vuelo</a>
+            <a href="#info">Información de vuelos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#FaQ">FaQs</a>
+            <a href="#aboutus">Sobre Nosotros</a>
+            <a href="http://127.0.0.1:5500/RolCliente/Login.html" id="login-btn" class="right">Iniciar sesión</a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <h4>INSPIRACIÓN DE VIAJE</h4>
+
+    <div class="activity-list">
+        <h1>Qué hacer en Cartagena, Colombia</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>Explorar el Centro Histórico</h2>
+                <p>Camina por las calles empedradas del Centro Histórico de Cartagena, declarado Patrimonio de la Humanidad por la UNESCO.</p>
+            </div>
+            <div class="activity">
+                <h2>Visitar el Castillo de San Felipe</h2>
+                <p>Descubre la historia militar de Cartagena explorando el imponente Castillo de San Felipe de Barajas.</p>
+            </div>
+            <div class="activity">
+                <h2>Relajarse en las Playas de Bocagrande</h2>
+                <p>Disfruta del sol y el mar en las playas de Bocagrande, una moderna zona turística de Cartagena.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="activity-list">
+        <h1>Dónde comer en Cartagena, Colombia</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>La Cevichería</h2>
+                <p>Prueba deliciosos ceviches y mariscos frescos en La Cevichería, un restaurante popular en el Centro Histórico.</p>
+            </div>
+            <div class="activity">
+                <h2>Restaurante Interno at Casa San Agustin</h2>
+                <p>Experimenta la alta cocina colombiana en el Restaurante Interno, ubicado en el encantador hotel Casa San Agustin.</p>
+            </div>
+            <div class="activity">
+                <h2>La Vitrola</h2>
+                <p>Disfruta de música en vivo y platos tradicionales en La Vitrola, un restaurante clásico en el Centro Histórico.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="activity-list">
+        <h1>Lugares para hospedarse en Cartagena, Colombia</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>Casa San Agustin</h2>
+                <p>Alojate en el encantador hotel boutique Casa San Agustin, ubicado en el corazón del Centro Histórico.</p>
+            </div>
+            <div class="activity">
+                <h2>Hotel Santa Clara</h2>
+                <p>Experimenta la elegancia colonial al hospedarte en el Hotel Santa Clara, un antiguo convento convertido en hotel de lujo.</p>
+            </div>
+            <div class="activity">
+                <h2>Hyatt Regency Cartagena</h2>
+                <p>Disfruta de vistas al mar y comodidades modernas en el Hyatt Regency Cartagena, ubicado en la zona de Bocagrande.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <br><br><br>
+
+    <div class="footer">
+        <p>© 2023 EVuelosWeb</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

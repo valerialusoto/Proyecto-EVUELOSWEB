@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/HomePage.css">
+</head>
+
+<style>
+    body {
+        background-color: #f0f0f0;
+    }
+
+    .activity-list {
+        width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    .activity-list h1 {
+        text-align: center;
+        padding: 20px 0;
+    }
+
+    .activity-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .activity-list.Lugares .activity {
+        flex: 1;
+        max-width: calc(33.33% - 30px);
+        transition: transform 0.5s ease-in-out; 
+    }
+
+    .activity {
+        background-color: white;
+        margin-bottom: 20px;
+        padding: 20px;
+        border-radius: 10px;
+        flex: 1;
+        margin: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        max-height: 300px;
+        overflow: hidden;
+        flex-basis: calc(33.33% - 20px);
+    }
+
+    .activity:hover {
+        transform: scale(1.05); /* Aumenta el tamaño al pasar el mouse por encima */
+    }
+
+    .activity-list h1 {
+        margin-bottom: 10px;
+        font-family: Gardena;
+        font-weight: bold;
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .activity h2 {
+        margin-bottom: 10px;
+        font-family: gardena;
+        font-weight: bold;
+        font-size: 25px;
+        text-align: center;
+    }
+
+    h4 {
+        font-size: 20px;
+        font-family: vacation;
+        text-align: center;
+        color: darkgray;
+        letter-spacing: 5px;
+    }
+
+    .navbar {
+        overflow: hidden;
+        background-color: #003e1f;
+        font-family: Arial;
+    }
+
+    .navbar .menu {
+        display: flex;
+        justify-content: flex-start;
+        width: 100%;
+    }
+
+    .navbar a {
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+
+    .navbar a.right {
+        margin-left: auto;
+    }
+
+    .footer {
+        background-color: #003e1f;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+    }
+
+</style>
+
+<body>
+
+    <div class="navbar">
+        <div class="menu">
+            <a href="#reservar">Reservar vuelo</a>
+            <a href="#info">Información de vuelos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="#FaQ">FaQs</a>
+            <a href="#aboutus">Sobre Nosotros</a>
+            <a href="http://127.0.0.1:5500/RolCliente/Login.html" id="login-btn" class="right">Iniciar sesión</a>
+        </div>
+    </div>
+
+    <br><br><br>
+
+    <h4>INSPIRACIÓN DE VIAJE</h4>
+
+    <div class="activity-list">
+        <h1>Qué hacer en Estados Unidos</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>Explorar el Gran Cañón</h2>
+                <p>Descubre la grandiosidad natural del Gran Cañón en Arizona y disfruta de impresionantes vistas panorámicas.</p>
+            </div>
+            <div class="activity">
+                <h2>Visitar el Museo Metropolitano de Arte</h2>
+                <p>Explora una increíble colección de arte en el Museo Metropolitano de Arte (MET) en la ciudad de Nueva York.</p>
+            </div>
+            <div class="activity">
+                <h2>Recorrer Disneyland</h2>
+                <p>Vive la magia en Disneyland, California, y disfruta de emocionantes atracciones y encuentros con personajes.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="activity-list">
+        <h1>Dónde comer en Estados Unidos</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>The French Laundry</h2>
+                <p>Experimenta alta gastronomía en The French Laundry, un prestigioso restaurante en Napa Valley, California.</p>
+            </div>
+            <div class="activity">
+                <h2>Joe's Stone Crab</h2>
+                <p>Disfruta de mariscos frescos en Joe's Stone Crab, un clásico restaurante en Miami Beach, Florida.</p>
+            </div>
+            <div class="activity">
+                <h2>Pizza en Lombardi's, Nueva York</h2>
+                <p>Prueba una auténtica pizza en Lombardi's, la pizzería más antigua de Nueva York, ubicada en Little Italy.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="activity-list">
+        <h1>Lugares para hospedarse en Estados Unidos</h1>
+        <div class="activity-row">
+            <div class="activity">
+                <h2>Hotel del Coronado, California</h2>
+                <p>Alojate en el icónico Hotel del Coronado en California, con vistas al Océano Pacífico y arquitectura histórica.</p>
+            </div>
+            <div class="activity">
+                <h2>The Plaza Hotel, Nueva York</h2>
+                <p>Experimenta el lujo en The Plaza Hotel, ubicado en el corazón de Nueva York, cerca de Central Park.</p>
+            </div>
+            <div class="activity">
+                <h2>Disney's Grand Floridian Resort, Florida</h2>
+                <p>Vive la magia de Disney alojándote en el Disney's Grand Floridian Resort en Orlando, Florida.</p>
+            </div>
+        </div>
+    </div>
+    
+    
+    <br><br><br>
+
+    <div class="footer">
+        <p>© 2023 EVuelosWeb</p>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
