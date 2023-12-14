@@ -28,26 +28,26 @@ if ($conn) {
             $row = sqlsrv_fetch_array($stmt, SQLSRV_FETCH_ASSOC);
             $userRol = $row['Rol'];
 
-            // Verifica si el usuario tiene permisos de Administrador (rol 1)
-            if ($userRol === 'Administrador') {
+            // Verifica si el usuario tiene permisos de Consecutivo (rol 3)
+            if ($userRol === 'Consecutivo') {
                 // Almacena el nombre y apellido del usuario en una variable de sesión
                 $_SESSION['nombreUsuario'] = $row['Nombre']; // Reemplaza 'Nombre' con el campo real en tu base de datos
                 $_SESSION['apellidoUsuario'] = $row['Apellido']; // Reemplaza 'Apellido' con el campo real en tu base de datos
 
-                // Redirige a HomeAdministrador.html después de cerrar la alerta
-                echo '<script>window.location.href = "HomeAdministrador.html";</script>';
+                // Redirige a HomeConsecutivo.html después de cerrar la alerta
+                echo '<script>window.location.href = "HomeConsecutivo.html";</script>';
                 exit(); // Asegura que el script se detenga después de la redirección
             } else {
-                echo '<script>alert("El usuario no tiene permisos de Administrador."); window.location.href = "LoginAdministrador.html";</script>';
+                echo '<script>alert("El usuario no tiene permisos de Consecutivo."); window.location.href = "LoginConsecutivo.html";</script>';
             }
         } else {
-            echo '<script>alert("Credenciales incorrectas o el usuario no tiene permisos de Administrador."); window.location.href = "LoginAdministrador.html";</script>';
+            echo '<script>alert("Credenciales incorrectas o el usuario no tiene permisos de Consecutivo."); window.location.href = "LoginConsecutivo.html";</script>';
         }
 
         // Cierra la consulta
         sqlsrv_free_stmt($stmt);
     } else {
-        echo '<script>alert("Faltan datos de inicio de sesión."); window.location.href = "LoginAdministrador.html";</script>';
+        echo '<script>alert("Faltan datos de inicio de sesión."); window.location.href = "LoginConsecutivo.html";</script>';
     }
 
     // Cierra la conexión
