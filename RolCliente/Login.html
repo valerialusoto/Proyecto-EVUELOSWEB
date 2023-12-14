@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="css/HomePage.css">
+
+    <style>
+        
+        
+
+        
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow-x: hidden;
+        }
+
+        #content {
+            filter: blur(8px);
+            -webkit-filter: blur(8px);
+        }
+
+        .login-form {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+            width: 300px;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .login-form:hover {
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+        }
+
+        .login-form input[type="text"], .login-form input[type="password"] {
+            width: 100%;
+            border: none;
+            background-color: #f0f0f0;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+
+        .login-form input[type="submit"] {
+            width: 100%;
+            border: none;
+            color: white;
+            background-color: #4CAF50;
+            cursor: pointer;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .login-form input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    </style>
+</head>
+<body>
+    <div id="content">
+        <br>
+        <div class="navbar">
+            <div class="menu">
+                <a href="#reservar">Reservar vuelo</a>
+                <a href="#info">Información de vuelos</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#FaQ">FaQs</a>
+                <a href="#aboutus">Sobre Nosotros</a>
+                <a href="http://127.0.0.1:5500/RolCliente/Login.html" id="login-btn" class="right">Iniciar sesión</a>
+            </div>
+        </div>
+
+        <section class="imagennavidad">
+            <section id="miSeccion">
+                <div class="partePequena">Celebrá la</div>
+                <div class="parteGrande">TEMPORADA DE ALEGRÍA</div>
+                <div class="partePequenaDerecha">con EVuelosWeb</div>
+            </section>
+        </section>
+
+        <br><br><br>
+
+        <section class="DestinosCards">
+            <h2>Destinos Destacados</h2>
+            <br><br><br>
+        </section>
+    </div>
+
+    <!-- Mover el formulario aquí -->
+    <div style="display: flex; justify-content: center; align-items: center; height: 100%;">
+        <form class="login-form">
+            <a href="HomePage.html" id="close-btn">X</a>
+            <label for="username">Nombre de usuario:</label><br>
+            <input type="text" id="username" name="username"><br>
+            <label for="password">Contraseña:</label><br>
+            <input type="password" id="password" name="password"><br>
+            <input type="submit" value="Iniciar sesión">
+        </form>
+    </div>
+</body>
+</html>

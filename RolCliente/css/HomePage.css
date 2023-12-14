@@ -1,0 +1,326 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    overflow-x: hidden;
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .navbar {
+    overflow: hidden;
+    background-color: #003e1f;
+    font-family: Arial;
+    
+  }
+  
+  .navbar .menu {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a.right {
+    margin-left: auto;
+  }
+  
+  
+  
+  .footer {
+    background-color: #003e1f;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .imagennavidad {
+      background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)), url('images/section1.webp');
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding-left: 90px; 
+  }
+  
+  
+  
+  #miSeccion .partePequena {
+   
+    color: #003e1f;
+  
+    font-size: 50px;
+    text-align: left;
+    width: 100%;
+    margin-left: 70px;
+    font-family: HarvestSeason;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  #miSeccion .parteGrande {
+    font-size: 80px; 
+    color: #003e1f;
+  
+   
+    text-align: left;
+    width: 100%;
+    margin-left: 70px;
+    font-family: HarvestSeason;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  #miSeccion .partePequenaDerecha {
+   
+   color: #003e1f;
+  
+   font-size: 40px;
+   text-align: left;
+   width: 100%;
+   margin-left: 670px;
+   font-family: HarvestSeason;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  @font-face {
+    font-family: HarvestSeason;
+    src: url(fonts/Harvest\ Season.otf);
+  }
+  
+  @font-face {
+    font-family: Grenda;
+    src: url(fonts/Grenda.otf);
+  }
+  
+  
+  .DestinosCards h2{
+    text-align: center;
+  }
+  
+  .card-link {
+    text-decoration: none; 
+  }
+  
+  .card-link:hover .card {
+    transform: scale(1.10); 
+    transition: transform 0.3s ease-in-out; 
+  }
+  .card-img-top {
+    height: 300px; 
+   
+    object-fit: cover; 
+  }
+  
+  
+  .card {
+    width: 30rem; 
+    height: auto; 
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  .loginhp {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3)), url('images/section2.webp');
+    height: 500px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding-left: 90px; 
+  }
+  
+  #loginhp .partePequena {
+   
+   color: white;
+  
+   font-size: 35px;
+   text-align:  center;
+   width: 100%;
+   margin-left: 70px;
+   font-family: HarvestSeason;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+  }
+  
+  #loginhp .parteGrande {
+   font-size: 60px; 
+   color: white;
+  
+  
+   text-align: center;
+   width: 100%;
+   margin-left: 70px;
+   font-family: HarvestSeason;
+   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .btnloginhp {
+    background-color: #003e1f; /* Color de fondo */
+    border: none; /* Remueve el borde */
+    color: white; /* Color del texto */
+    padding: 15px 32px; /* Espaciado interno */
+    text-align: center; /* Alineación del texto */
+    text-decoration: none; /* Remueve el subrayado */
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer; /* Cambia el cursor al pasar el mouse por encima */
+    transition-duration: 0.4s; /* Duración de la transición */
+    align-items: center;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3);
+  
+    
+  }
+  
+  .btnloginhp:hover {
+    
+    color: white; 
+    transform: scale(1.10); 
+    transition: transform 0.3s ease-in-out; 
+  }
+  
+  
+  .grid-item {
+    text-align: center; /* Esto centra el texto debajo de las imágenes */
+    
+  }
+  
+  .grid-container {
+    display: flex; /* Esto hace que los elementos estén en una misma fila */
+    justify-content: space-around; /* Esto agrega un espacio entre las imágenes */
+    margin-left: 50px;
+    margin-right: 50px;
+   
+  }
+  
+  .grid-item img {
+    width: 350px; /* Ajusta este valor al ancho que desees */
+    height: 250px; /* Ajusta este valor a la altura que desees */
+    object-fit: cover; /* Esto hará que la imagen cubra el espacio disponible sin distorsionarse */
+    gap: 25px; /* Esto agrega un espacio entre las imágenes */
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  
+  .experiencia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   
+    text-align: center;
+  }
+  
+   .parteGrande {
+    font-size: 60px;
+    color: #003e1f;
+    font-family: Grenda;
+   font-weight: bold;
+   margin-top: -20px;
+  
+  }
+  
+  .partePequena {
+    font-size: 30px;
+    color: #003e1f;
+    font-family: Grenda;
+    
+  }
+  
+  .DestinosCards h2 {
+  
+    font-family: Grenda;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bolder;
+    color: #003e1f;
+  
+  
+    }
+  
+    .aboutus {
+    background-color: #58525215; /* Color de fondo de la sección */
+    padding: 20px; /* Espaciado interno de la sección */
+  }
+  
+  .miGridContainer {
+    display: flex;
+    justify-content: space-evenly; /* Esto distribuirá el espacio de manera uniforme entre los elementos */
+    flex-wrap: wrap;
+  }
+  
+  
+  
+  .miGridItem {
+    width: 180px; 
+    text-align: center;
+    margin: 5px;
+  }
+  
+  .miGridContainer h1 {
+    width: 100%;
+    text-align: center;
+    color: #003e1f; 
+    margin-bottom: 40px; 
+    font-family: Grenda;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+  
+  
+  
+  
+  .miGridItem img {
+    width: 200px;
+    height: 190px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 20px; /* Esto agrega un espacio debajo de la imagen */
+  }
+  
+  
+  
+  .miGridItem h2 {
+    color: #003e1f; 
+    font-size: 20px; 
+    font-family: Grenda;
+    text-shadow: 0;
+  
+  }
+  
+  .miGridItem p {
+    color: black; 
+    font-size: 16px; 
+  }
+  
+  .grid-item p {
+    font-size: 18px;
+    color: black;
+    margin-top: 10px;
+    font-family: Grenda;
+    font-weight: bold;
+  }
+  
