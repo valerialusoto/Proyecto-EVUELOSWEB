@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Information</title>
+    <link rel="stylesheet" href="css/HomePage.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+      
+        }
+
+        .navbar {
+    overflow: hidden;
+    background-color: #003e1f;
+    font-family: Arial;
+    
+  }
+  
+  .navbar .menu {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a.right {
+    margin-left: auto;
+  }
+  
+
+        
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .toggleSwitch {
+            display: inline-block;
+            height: 34px;
+            position: relative;
+            overflow: visible;
+            padding: 0;
+            cursor: pointer;
+            width: 300px; /* Ajusta el ancho según tus necesidades */
+            background-color: #fafafa;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            user-select: none;
+        }
+
+        .toggleSwitch input {
+            position: absolute;
+            opacity: 0;
+            z-index: 5;
+        }
+
+        .toggleSwitch > span {
+            position: absolute;
+            left: 0;
+            width: calc(100% - 6px);
+            margin: 0;
+            text-align: left;
+            white-space: nowrap;
+            margin: 0 3px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .toggleSwitch > span span {
+            width: 48%; /* Ajusta el ancho de cada opción según tus necesidades */
+            text-align: center;
+            font-size: 0.9em;
+            line-height: 34px;
+        }
+
+        .toggleSwitch a {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 50%;
+            background-color: #666;
+            border-radius: 0 4px 4px 0;
+            transition: all 0.2s ease-out;
+            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+        }
+
+        .toggleSwitch input:checked ~ a {
+            left: 0;
+            right: auto;
+        }
+
+        .toggleSwitch input:checked ~ span:before {
+            border-color: #0097D1;
+            box-shadow: inset 0 0 0 30px #0097D1;
+        }
+
+        .toggleSwitch input:checked ~ span span:first-of-type {
+            left: 0;
+            color: #999;
+        }
+
+        .toggleSwitch input:checked ~ span span:last-of-type {
+            color: #FFF;
+        }
+
+        #flightTable {
+            display: none;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 90%; /* Ajusta este valor a tu gusto */
+            margin: 0 auto; /* Centra la tabla horizontalmente */
+            border-collapse: separate;
+            border-spacing: 0 10px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        table th,
+        table td {
+            border: 1px solid white;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #434E5D;
+            color: white;
+        }
+
+        table td:last-child {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+<body>
+ 
+
+    <div class="navbar">
+        <div class="menu">
+          <a href="#reservar">Reservar vuelo</a>
+          <a href="#info">Información de vuelos</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#FaQ">FaQs</a>
+          <a href="#aboutus">Sobre Nosotros</a>
+          <a href="http://127.0.0.1:5500/RolCliente/Login.html" id="login-btn" class="right">Iniciar sesión</a>
+    
+    
+    
+        </div>
+      </div>
+
+    <br><br>
+
+    <h2>Información de vuelos</h2>
+    <br><br>
+
+    <label class="toggleSwitch nolabel" onclick="toggleTable()">
+        <input type="checkbox" checked />
+        <a></a>
+        <span>
+            <span class="left-span">Vuelos Entrantes</span>
+            <span class="right-span">Vuelos Salientes</span>
+        </span>
+    </label>
+
+    <table id="flightTable">
+        <tr>
+            <th>Vuelo</th>
+            <th>Aerolínea</th>
+            <th>Procedencia</th>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Estado</th>
+            <th>Puerta</th>
+        </tr>
+        <!-- Los datos de los vuelos se llenarán aquí -->
+    </table>
+
+    <script>
+        function toggleTable() {
+            var table = document.getElementById('flightTable');
+            var checkbox = document.querySelector('.toggleSwitch input');
+    
+            // Limpia la tabla antes de insertar nuevas filas
+            while (table.rows.length > 1) {
+                table.deleteRow(1);
+            }
+    
+            if (checkbox.checked) {
+                table.style.display = 'table';
+                llenarTablaVuelosEntrantes();
+            } else {
+                table.style.display = 'table'; // Muestra la tabla, aunque esté vacía
+                llenarTablaVuelosSalientes();
+            }
+        }
+    
+        function llenarTablaVuelosEntrantes() {
+            var tabla = document.getElementById('flightTable');
+            var datos = obtenerDatosDeVuelosEntrantes();
+            for (var i = 0; i < datos.length; i++) {
+                var fila = tabla.insertRow(-1);
+                for (var propiedad in datos[i]) {
+                    var celda = fila.insertCell(-1);
+                    celda.textContent = datos[i][propiedad];
+                }
+            }
+        }
+    
+        function llenarTablaVuelosSalientes() {
+            var tabla = document.getElementById('flightTable');
+            var datos = obtenerDatosDeVuelosSalientes();
+            for (var i = 0; i < datos.length; i++) {
+                var fila = tabla.insertRow(-1);
+                for (var propiedad in datos[i]) {
+                    var celda = fila.insertCell(-1);
+                    celda.textContent = datos[i][propiedad];
+                }
+            }
+        }
+    
+        function obtenerDatosDeVuelosEntrantes() {
+            return [
+                { vuelo: 'CM 796', aerolinea: 'COPA', procedencia: 'SAN PEDRO', fecha: '6-Jan', hora: '4:50pm', estado: 'Arribó', puerta: '10' },
+                // Agrega aquí más datos de vuelos entrantes
+            ];
+        }
+    
+        function obtenerDatosDeVuelosSalientes() {
+            return [
+                { vuelo: 'CM 797', aerolinea: 'COPA', procedencia: 'SAN PEDRO', fecha: '6-Jan', hora: '5:30pm', estado: 'Salió', puerta: '12' },
+                // Agrega aquí más datos de vuelos salientes
+            ];
+        }
+    
+        // Llena la tabla con datos de vuelos entrantes cada 10 segundos
+        setInterval(function() {
+            if (document.querySelector('.toggleSwitch input').checked) {
+                toggleTable();
+            }
+        }, 10000);
+    
+        // Llena la tabla con datos de vuelos salientes cada 10 segundos
+        setInterval(function() {
+            if (!document.querySelector('.toggleSwitch input').checked) {
+                toggleTable();
+            }
+        }, 10000);
+    </script>
+    
+    
+</body>
+</html>

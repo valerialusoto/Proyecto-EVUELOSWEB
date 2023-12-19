@@ -9,7 +9,9 @@
     <link rel="stylesheet" href="css/HomePage.css">
     <link rel="stylesheet" href="css/Login.css">
 
-    
+    <meta name="google-signin-client_id" content="887155282406-pgjt6qcqct1ikr4fr3heo5vso71itd3p.apps.googleusercontent.com">
+
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
     <div id="content">
@@ -53,6 +55,12 @@
             <button>Log In</button>
             <p>¿No tienes cuenta? <a href="http://127.0.0.1:5500/RolCliente/SignIn.html">Regístrate</a></p>
             <br>
+
+            <div id="g_id_onload"
+                 data-client_id="887155282406-pgjt6qcqct1ikr4fr3heo5vso71itd3p.apps.googleusercontent.com"
+                 data-callback="handleCredentialResponse">
+            </div>
+            <div class="g_id_signin"></div>
         </div>
     </div>
 
@@ -62,12 +70,34 @@
             window.location.href = 'http://127.0.0.1:5500/RolCliente/HomePage.html'; 
         });
     });
-    
+
+    function handleCredentialResponse(response) {
+        console.log('ID: ' + response.credential);
+    }
+
+
+    function handleCredentialResponse(response) {
+    if (response.error) {
+        console.error('Google Sign-In Error: ', response.error);
+    } else {
+        console.log('ID: ' + response.credential);
+    }
+}
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
     </script>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
 integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
 crossorigin="anonymous"></script>
+
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 </body>
 </html>
