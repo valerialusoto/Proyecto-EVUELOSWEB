@@ -105,13 +105,63 @@
             window.location.href = 'http://127.0.0.1:5500/RolAdministrador/Consecutivos/Administracion-CrearConsecutivo.html';
         }
 
-        function editarConsecutivo(codigo) {
-            // Lógica para editar el consecutivo con el código proporcionado
-            // Puedes redirigir a la página de edición o implementar la lógica directamente aquí
-            alert('Editar consecutivo con código: ' + codigo);
-        }
+        
+function editarConsecutivo(codigo) {
+    // Encuentra el consecutivo con el código proporcionado
+    var consecutivos = JSON.parse(localStorage.getItem('consecutivos')) || [];
+    var consecutivo = consecutivos.find(function(c) { return c.consecutivo === codigo; });
+
+    // Guarda el consecutivo a editar en localStorage
+    localStorage.setItem('consecutivoAEditar', JSON.stringify(consecutivo));
+
+    // Redirige a la página de creación
+    window.location.href = 'http://127.0.0.1:5500/RolAdministrador/Consecutivos/Administracion-CrearConsecutivo.html';
+}
+
+// En tu página de creación de consecutivos
+
+window.onload = function() {
+    // Verifica si hay un consecutivo a editar en localStorage
+    var consecutivoAEditar = JSON.parse(localStorage.getItem('consecutivoAEditar'));
+    if (consecutivoAEditar) {
+        // Llena las casillas con los datos del consecutivo
+        document.getElementById('descripcion').value = consecutivoAEditar.descripcion;
+        document.getElementById('consecutivo').value = consecutivoAEditar.consecutivo;
+        document.getElementById('posee-prefijo').checked = !!consecutivoAEditar.prefijo;
+        document.getElementById('prefijo').value = consecutivoAEditar.prefijo || '';
+        document.getElementById('posee-rango').checked = !!consecutivoAEditar.rangoInicial;
+        document.getElementById('rango-inicial').value = consecutivoAEditar.rangoInicial || '';
+        document.getElementById('rango-final').value = consecutivoAEditar.rangoFinal || '';
+
+        // Elimina el consecutivo a editar de localStorage
+        localStorage.removeItem('consecutivoAEditar');
+    }
+};
     </script>
 
+
+
+<script>
+
+
+window.onload = function() {
+    // Obtén los consecutivos de localStorage
+    var consecutivos = JSON.parse(localStorage.getItem('consecutivos')) || [];
+
+    // Para cada consecutivo, crea una fila en la tabla
+    consecutivos.forEach(function(consecutivo) {
+        var fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${consecutivo.consecutivo}</td>
+            <td>${consecutivo.descripcion}</td>
+            <td>${consecutivo.consecutivo}</td>
+            <td><button onclick="editarConsecutivo('${consecutivo.consecutivo}')">Editar</button></td>
+        `;
+        document.querySelector('.data-table tbody').appendChild(fila);
+    });
+};
+
+</script>
 
 
 

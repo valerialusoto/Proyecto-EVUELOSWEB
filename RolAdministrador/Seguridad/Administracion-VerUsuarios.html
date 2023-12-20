@@ -92,8 +92,6 @@
     </nav>
     <br><br>
        
-
-
    
     <div class="container">
         <h1>Lista de Usuarios</h1>
@@ -107,7 +105,8 @@
                 <tr>
                     <th>Nombre</th>
                     <th>Rol</th>
-                    <th>Acción</th>
+                    <th>Actualizar Rol</th>
+                    <th>Eliminar Usuario</th>
                 </tr>
             </thead>
             <tbody id="userTable">
@@ -117,64 +116,111 @@
     </div>
     
     <script>
-        // Supongamos que tienes tus usuarios y roles en un objeto como este
-        var users = [
-            {name: 'Usuario 1', role: 'Rol 1'},
-            {name: 'Usuario 2', role: 'Rol 2'},
-            // Añade más usuarios aquí
-        ];
-    
-        // Y estos son los roles disponibles
-        var roles = ['Administrador', 'Seguridad', 'Mantenimiento', 'Consultas'];
-    
-        // Esta función actualiza la tabla con los usuarios
-        function updateTable() {
-            var table = document.getElementById('userTable');
-            // Primero, limpiamos la tabla
-            while (table.rows.length > 0) {
-                table.deleteRow(0);
-            }
-            // Luego, añadimos cada usuario a la tabla
-            for (var i = 0; i < users.length; i++) {
-                var row = table.insertRow(-1);
-                var cell1 = row.insertCell(0);
-                var cell2 = row.insertCell(1);
-                var cell3 = row.insertCell(2);
-                cell1.innerHTML = users[i].name;
-                cell2.innerHTML = users[i].role;
-                cell3.innerHTML = '<div class="action-cell"><button onclick="showRoleDropdown(' + i + ')">Actualizar Roles</button><select id="roleDropdown' + i + '" style="display: none;" onchange="updateRole(' + i + ', this.value)">' + roles.map(function(role) { return '<option' + (role === users[i].role ? ' selected' : '') + '>' + role + '</option>'; }).join('') + '</select></div>';
-            }
-        }
+        // Estos son los roles disponibles
+        var roles = ['Usuario', 'Administrador', 'Seguridad', 'Mantenimiento', 'Consultas'];
     
         // Esta función se llama cuando se presiona el botón "Actualizar Roles"
         function showRoleDropdown(index) {
-            document.getElementById('roleDropdown' + index).style.display = 'inline';
+            var dropdown = document.getElementById('roleDropdown' + index);
+            dropdown.style.display = 'inline';
+            dropdown.innerHTML = '';  // Limpiar opciones anteriores
+    
+            // Agregar opciones de roles disponibles al dropdown
+            roles.forEach(function (role) {
+                var option = document.createElement('option');
+                option.value = role;
+                option.text = role;
+                dropdown.add(option);
+            });
         }
     
         // Esta función se llama cuando se selecciona un rol en el menú desplegable
         function updateRole(index, newRole) {
+            var users = JSON.parse(localStorage.getItem('users')) || [];
             users[index].role = newRole;
+            localStorage.setItem('users', JSON.stringify(users));
+            updateTable();
+        }
+    
+        // Esta función se llama cuando se presiona el botón "Eliminar Usuario"
+        function eliminarUsuario(index) {
+            var users = JSON.parse(localStorage.getItem('users')) || [];
+            users.splice(index, 1);  // Eliminar el usuario en la posición index
+            localStorage.setItem('users', JSON.stringify(users));
             updateTable();
         }
     
         // Esta función se llama cuando se presiona el botón "Crear Nuevo Usuario"
         function nuevoUsuario() {
             // Cambia la URL de la página a la de la nueva página
-            window.location.href = 'hhttp://localhost:8080/PROYECTO-EVUELOSWEB/RolAdministrador/Seguridad/Administracion-CrearUsuarios.html';
+            window.location.href = 'http://127.0.0.1:5500/RolAdministrador/Seguridad/Administracion-CrearUsuarios.html';
         }
     
         // Actualizamos la tabla al cargar la página
-        window.onload = updateTable;
-    </script>
+        window.onload = function () {
+            updateTable();
+        };
     
-
-
-
-
-
-
-
-
+        function updateTable() {
+            var users = JSON.parse(localStorage.getItem('users')) || [];
+            var userTable = document.getElementById('userTable');
+    
+            // Limpiar la tabla antes de actualizar
+            userTable.innerHTML = '';
+    
+            for (var i = 0; i < users.length; i++) {
+                var row = document.createElement('tr');
+    
+                var nameCell = document.createElement('td');
+                nameCell.textContent = users[i].username;
+                row.appendChild(nameCell);
+    
+                var roleCell = document.createElement('td');
+                roleCell.textContent = users[i].role || 'Usuario'; // Utiliza el rol almacenado o asume 'Usuario'
+                row.appendChild(roleCell);
+    
+                // Crear botones para "Actualizar Rol" y "Eliminar Usuario"
+                var updateRoleButton = document.createElement('button');
+                var deleteButton = document.createElement('button');
+    
+                updateRoleButton.textContent = 'Actualizar Rol';
+                deleteButton.textContent = 'Eliminar Usuario';
+    
+                // Asignar manejadores de eventos a los botones
+                updateRoleButton.onclick = function (index) {
+                    return function () {
+                        showRoleDropdown(index);
+                    };
+                }(i);
+    
+                deleteButton.onclick = function (index) {
+                    return function () {
+                        eliminarUsuario(index);
+                    };
+                }(i);
+    
+                // Crear celda para botones
+                var actionCell = document.createElement('td');
+                actionCell.appendChild(updateRoleButton);
+                actionCell.appendChild(deleteButton);
+    
+                row.appendChild(actionCell);
+    
+                // Crear dropdown para "Actualizar Rol"
+                var select = document.createElement('select');
+                select.id = 'roleDropdown' + i;
+                select.style.display = 'none';
+                select.onchange = function (index) {
+                    return function () {
+                        updateRole(index, this.value);
+                    };
+                }(i);
+                actionCell.appendChild(select);
+    
+                userTable.appendChild(row);
+            }
+        }
+    </script>
 
 
 

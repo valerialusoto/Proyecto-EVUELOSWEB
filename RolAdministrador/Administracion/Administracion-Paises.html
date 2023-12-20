@@ -64,8 +64,10 @@
     </nav>
 
 <br><br>
+
+
+
 <div class="container">
- 
     <div class="form">
         <h1>Registro de Países</h1>
         <br>
@@ -73,7 +75,6 @@
             <img id="imagenVista" src="" alt="" />
             <input type="file" id="imagen" accept="image/*" style="display: none;" />
             <br>
-
             <label for="imagen" id="labelImagen">Cargar imagen</label>
         </div>
         <div class="input-group">
@@ -87,56 +88,74 @@
         </div>
         <div class="button-group">
             <button id="guardar" onclick="guardar()">Aceptar</button>
-            <button id="borrar" onclick="borrar()">Borrar</button>
-            <button id="cerrar" onclick="cerrar()">Cerrar</button>
+            <button id="borrar" onclick="cancelar()">Cancelar</button>
+
         </div>
-    </div>
-    <div class="grid">
-        <!-- Aquí se mostrarán los elementos de la lista de países -->
     </div>
 </div>
 
-    <script>
-    let lastId = 0;
+<div class="container">
+    <table class="table table-striped" id="tablaPaises">
+        <thead>
+            <tr>
+                <th>Código del país</th>
+                <th>Nombre del país</th>
+                <th>Logo</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí se mostrarán los elementos de la lista de países -->
+        </tbody>
+    </table>
+</div>
 
-    function generarCodigo() {
-        lastId++; // incrementa el ID
-        return 'PAIS' + lastId.toString().padStart(5, '0');
-    }
-    
-    
-    function guardar() {
-        var codigo = document.getElementById('codigo').value;
-        var nombre = document.getElementById('nombre').value;
-        var imagen = document.getElementById('imagenVista').src;
-    
-        // Aquí puedes guardar la información en tu base de datos o donde prefieras.
-    
-        alert('Los datos han sido guardados con éxito.');
-    }
-    
-    function borrar() {
-        document.getElementById('codigo').value = '';
-        document.getElementById('nombre').value = '';
-        document.getElementById('imagenVista').src = '';
-    }
-    
-    function cerrar() {
-        // Aquí puedes redirigir al usuario a la lista de países.
-    }
-    
-    document.getElementById('imagen').addEventListener('change', function(e) {
-        var reader = new FileReader();
-        reader.onload = function() {
-            document.getElementById('imagenVista').src = reader.result;
-        }
-        reader.readAsDataURL(e.target.files[0]);
-    });
-    
-    document.getElementById('codigo').value = generarCodigo();
-    
-    </script>
+<script>
+let lastId = 0;
 
+function generarCodigo() {
+    lastId++; // incrementa el ID
+    return 'PAIS' + lastId.toString().padStart(5, '0');
+}
+
+function guardar() {
+    var codigo = document.getElementById('codigo').value;
+    var nombre = document.getElementById('nombre').value;
+    var imagen = document.getElementById('imagenVista').src;
+
+    // Aquí puedes guardar la información en tu base de datos o donde prefieras.
+
+    // Agrega el nuevo país a la tabla
+    var tabla = document.getElementById('tablaPaises').getElementsByTagName('tbody')[0];
+    var fila = document.createElement('tr');
+    fila.innerHTML = '<td>' + codigo + '</td><td>' + nombre + '</td><td><img src="' + imagen + '" alt="' + nombre + '"></td>';
+    tabla.appendChild(fila);
+
+    // Muestra un mensaje de éxito
+    alert('El país ' + nombre + ' ha sido creado con éxito.');
+
+    // Limpia las casillas
+    cancelar();
+}
+
+function cancelar() {
+    document.getElementById('codigo').value = '';
+    document.getElementById('nombre').value = '';
+    document.getElementById('imagenVista').src = '';
+    document.getElementById('codigo').value = generarCodigo(); // Genera un nuevo código después de borrar
+}
+
+
+document.getElementById('imagen').addEventListener('change', function(e) {
+    var reader = new FileReader();
+    reader.onload = function() {
+        document.getElementById('imagenVista').src = reader.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+
+document.getElementById('codigo').value = generarCodigo();
+
+</script>
 
 
 

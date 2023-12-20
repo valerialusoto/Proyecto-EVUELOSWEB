@@ -133,6 +133,81 @@
 
         </form>
       </div>
+
+      <script>
+
+        // Función para habilitar o deshabilitar el campo de prefijo
+function togglePrefijo() {
+    var poseePrefijo = document.getElementById('posee-prefijo').checked;
+    document.getElementById('prefijo').disabled = !poseePrefijo;
+}
+
+// Función para habilitar o deshabilitar los campos de rango
+function toggleRango() {
+    var poseeRango = document.getElementById('posee-rango').checked;
+    document.getElementById('rango-inicial').disabled = !poseeRango;
+    document.getElementById('rango-final').disabled = !poseeRango;
+}
+
+// Agregar los event listeners al cargar la página
+window.onload = function() {
+    document.getElementById('posee-prefijo').addEventListener('change', togglePrefijo);
+    document.getElementById('posee-rango').addEventListener('change', toggleRango);
+}
+
+      </script>
+
+
+<script>
+    
+// En tu página de creación de consecutivos
+
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    // Obtén los valores del formulario
+    var descripcion = document.getElementById('descripcion').value;
+    var consecutivo = document.getElementById('consecutivo').value;
+    var poseePrefijo = document.getElementById('posee-prefijo').checked;
+    var prefijo = poseePrefijo ? document.getElementById('prefijo').value : '';
+    var poseeRango = document.getElementById('posee-rango').checked;
+    var rangoInicial = poseeRango ? document.getElementById('rango-inicial').value : '';
+    var rangoFinal = poseeRango ? document.getElementById('rango-final').value : '';
+
+    // Crea un objeto con los datos
+    var nuevoConsecutivo = {
+        descripcion: descripcion,
+        consecutivo: consecutivo,
+        prefijo: prefijo,
+        rangoInicial: rangoInicial,
+        rangoFinal: rangoFinal
+    };
+
+    // Obtén los consecutivos existentes de localStorage
+    var consecutivos = JSON.parse(localStorage.getItem('consecutivos')) || [];
+
+    // Agrega el nuevo consecutivo a la lista
+    consecutivos.push(nuevoConsecutivo);
+
+    // Guarda la lista actualizada en localStorage
+    localStorage.setItem('consecutivos', JSON.stringify(consecutivos));
+
+    // Muestra una alerta al usuario
+    alert('Consecutivo creado con éxito!');
+
+    // Limpia las casillas de entrada
+    document.getElementById('descripcion').value = '';
+    document.getElementById('consecutivo').value = '';
+    document.getElementById('posee-prefijo').checked = false;
+    document.getElementById('prefijo').value = '';
+    document.getElementById('posee-rango').checked = false;
+    document.getElementById('rango-inicial').value = '';
+    document.getElementById('rango-final').value = '';
+});
+
+</script>
+
+    
       
 
 

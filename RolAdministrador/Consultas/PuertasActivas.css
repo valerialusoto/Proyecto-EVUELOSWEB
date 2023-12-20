@@ -1,72 +1,182 @@
-/* NavBar */
+
+ 
+
+  /* NavBar */
 .navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #272f3f;
-  }
-  
-  body {
-    padding-top: 56px;
-  }
-  
-  .container {
-    margin-top: 20px;
-  }
-  
-  .row {
-    margin-bottom: 10px;
-  }
-  
-  input[type="checkbox"] {
-    margin-right: 5px;
-  }
-  
-  label {
-    font-weight: normal;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-  }
-
-
-  /**/
-
-  main {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    }
-
-    
-h2 {
-    text-align: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #272F3F;
 }
-    
-    .gate-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center; /* Centra las tarjetas horizontalmente */
-    }
-    
-    .gate-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 10px;
-    padding: 10px;
-    width: 200px;
-    text-align: center;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Agrega un efecto de sombra */
-    }
-    
-    /* Estilo para puertas abiertas */
-    .gate-card.open {
-    background-color: #8eff8e; /* Verde claro */
-    }
-    
-    /* Estilo para puertas cerradas */
-    .gate-card.closed {
-    background-color: #ff8e8e; /* Rojo claro */
-    }
+
+body {
+  padding-top: 56px; 
+}
+
+.container {
+  margin-top: 20px;
+}
+
+.row {
+  margin-bottom: 10px;
+}
+
+input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+label {
+  font-weight: normal;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+
+
+
+/**/
+.container {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #272F3F;
+padding: 40px;
+color: white;
+border-radius: 8px;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+width: 800px;
+}
+
+h1 {
+
+margin-bottom: 20px;
+align-items: center;
+}
+
+label {
+margin-bottom: 5px;
+font-size: 16px;
+}
+
+select,
+input,
+textarea {
+width: 100%;
+padding: 8px;
+border: 1px solid white;
+border-radius: 4px;
+margin-bottom: 10px;
+}
+
+button {
+width: 100%;
+padding: 10px;
+background-color: #272f3f;
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+}
+
+button:hover {
+background-color: #ffa564;
+}
+
+.form-group {
+display: flex;
+flex-direction: column;
+margin: 10px 0;
+}
+
+.toggle-group {
+display: flex;
+margin-bottom: 10px;
+}
+
+.toggle-group input,
+.toggle-group label {
+margin-right: 10px;
+}
+
+.form-subgroup {
+display: flex;
+flex-direction: column;
+margin-bottom: 10px;
+}
+
+.form-subgroup label {
+margin-bottom: 5px;
+}
+
+input[type=number] {
+width: 100%;
+padding: 5px;
+border: 1px solid white;
+border-radius: 4px;
+}
+
+/* Optional: Style for disabled inputs */
+input:disabled {
+background-color: #555;
+opacity: 0.7;
+}
+
+.form-group {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.button-group {
+  display: flex;
+}
+
+button {
+  padding: 10px;
+  background-color: #434E5D;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #ffa564;
+}
+
+
+.data-table {
+  width: 80%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  align-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid white;
+  padding: 8px;
+  text-align: left;
+}
+
+.data-table th {
+  background-color: #434E5D;
+  color: white;
+}
+
+.data-table td:last-child {
+  display: flex;
+  justify-content: space-between;
+}

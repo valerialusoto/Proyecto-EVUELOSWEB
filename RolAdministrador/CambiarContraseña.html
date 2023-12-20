@@ -119,6 +119,31 @@
     </div>
     <br><br>
    
+   
+    <script> 
+
+document.querySelector('form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    var currentPassword = document.getElementById('current-password').value;
+    var newPassword = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirm-password').value;
+
+    if (newPassword !== confirmPassword) {
+        alert('Las contraseñas no coinciden. Por favor, inténtalo de nuevo.');
+        return;
+    }
+
+    // Aquí puedes agregar la lógica para verificar la contraseña actual y cambiarla.
+    // Esto dependerá de cómo estés manejando las contraseñas en tu aplicación.
+
+    alert('Contraseña cambiada con éxito!');
+
+    // Limpia el formulario
+    event.target.reset();
+});
+
+    </script>
 
 
 

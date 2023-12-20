@@ -93,29 +93,176 @@
         </div>
     </nav>
 
-    <main>
 
-        <h2 class="card-title">Consulta de Puertas Activas</h2>
-        <br>
-        <div class="gate-list">
-            <!-- Estructura de la lista de puertas -->
-            <div class="gate-card open">
-                <p><strong>Entrada principal</strong></p>
-                <p>Código: A001</p>
-                <p>Número: 1</p>
-                <p>Estado: Abierta</p>
-            </div>
-        
-            <div class="gate-card closed">
-                <p><strong>Salida de emergencia</strong></p>
-                <p>Código: A002</p>
-                <p>Número: 2</p>
-                <p>Estado: Cerrada</p>
-            </div>
-        
+<br><br>
+<br><br>
+
+<div class="container">
+    <h1>Crear Puerta del Aeropuerto</h1>
+    <form id="form-puerta" method="POST">
+        <div class="form-group">
+            <label for="codigo">Código de Puerta</label>
+            <input type="text" id="codigo" name="codigo" required>
         </div>
-    </main>
+        <div class="form-group">
+            <label for="numero">Número de Puerta</label>
+            <input type="number" id="numero" name="numero" min="1" required>
+        </div>
+        <div class="form-group">
+            <label for="detalle">Detalle</label>
+            <select id="detalle" name="detalle" required>
+                <option value="">Seleccione una opción</option>
+                <option value="abierta">Abierta</option>
+                <option value="cerrada">Cerrada</option>
+                <option value="fuera de servicio">Fuera de Servicio</option>
+            </select>
+        </div>
+        
+
+
+        <div class="form-group" style="display: grid; grid-template-columns: 1fr 1fr;">
+            <button type="submit">Crear</button>
+            <button type="reset">Cancelar</button>
+        </div>
+        
+        
+    </form>
+</div> 
+
+
+
+<br><br>
+
+<table class="data-table">
+    <thead>
+        <tr>
+            <th>Código de Puerta</th>
+            <th>Número de Puerta</th>
+            <th>Detalle</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- Las filas de la tabla se agregarán dinámicamente aquí -->
+    </tbody>
+</table>
+
+<br><br><br><br><br>
+
+ 
+
+
+<script>
+    function nuevaPuerta() {
+        document.getElementById('form-puerta').reset();
+    }
+
+    function editarPuerta(codigo) {
+        // Encuentra la puerta con el código proporcionado
+        var puertas = JSON.parse(localStorage.getItem('puertas')) || [];
+        var puerta = puertas.find(function(p) { return p.codigo === codigo; });
+
+        // Llena el formulario con los datos de la puerta
+        document.getElementById('codigo').value = puerta.codigo;
+        document.getElementById('numero').value = puerta.numero;
+        document.getElementById('detalle').value = puerta.detalle;
+    }
+
+    window.onload = function() {
+        // Obtén las puertas de localStorage
+        var puertas = JSON.parse(localStorage.getItem('puertas')) || [];
+
+        // Para cada puerta, crea una fila en la tabla
+        puertas.forEach(function(puerta) {
+            var fila = document.createElement('tr');
+            fila.innerHTML = `
+                <td>${puerta.codigo}</td>
+                <td>${puerta.numero}</td>
+                <td>${puerta.detalle}</td>
+                <td><button onclick="editarPuerta('${puerta.codigo}')">Editar</button></td>
+            `;
+            document.querySelector('.data-table tbody').appendChild(fila);
+        });
+    };
+
+
     
+    function crearPuerta() {
+    // Obtén los valores del formulario
+    var codigo = document.getElementById('codigo').value;
+    var numero = document.getElementById('numero').value;
+    var detalle = document.getElementById('detalle').value;
+
+    // Crea un objeto de puerta
+    var puerta = { codigo: codigo, numero: numero, detalle: detalle };
+
+    // Obtén las puertas de localStorage
+    var puertas = JSON.parse(localStorage.getItem('puertas')) || [];
+
+    // Agrega la nueva puerta a la lista
+    puertas.push(puerta);
+
+    // Guarda las puertas en localStorage
+    localStorage.setItem('puertas', JSON.stringify(puertas));
+
+    // Muestra un mensaje de alerta
+    alert('Puerta creada');
+
+    // Actualiza la tabla
+    actualizarTabla();
+
+    // Limpia el formulario
+    document.getElementById('form-puerta').reset();
+}
+
+
+
+
+function actualizarTabla() {
+    // Obtén las puertas de localStorage
+    var puertas = JSON.parse(localStorage.getItem('puertas')) || [];
+
+    // Limpia la tabla
+    var tbody = document.querySelector('.data-table tbody');
+    while (tbody.firstChild) {
+        tbody.removeChild(tbody.firstChild);
+    }
+
+    // Para cada puerta, crea una fila en la tabla
+    puertas.forEach(function(puerta) {
+        var fila = document.createElement('tr');
+        fila.innerHTML = `
+            <td>${puerta.codigo}</td>
+            <td>${puerta.numero}</td>
+            <td>${puerta.detalle}</td>
+            <td><button onclick="editarPuerta('${puerta.codigo}')">Editar</button></td>
+        `;
+        tbody.appendChild(fila);
+    });
+}
+
+// Llama a actualizarTabla cuando se carga la página
+window.onload = actualizarTabla;
+
+
+
+document.getElementById('form-puerta').addEventListener('submit', function(e) {
+    // Previene el comportamiento predeterminado del formulario
+    e.preventDefault();
+
+    // Crea la puerta
+    crearPuerta();
+});
+
+
+</script>
+
+    
+    
+
+
+
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"

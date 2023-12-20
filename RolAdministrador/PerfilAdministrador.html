@@ -163,13 +163,33 @@ document.getElementById('imagen').addEventListener('change', function(e) {
 });
 
 
+function saveChanges() {
+    // Obtén los valores del formulario
+    var name = document.getElementById('name').value;
+    var lastName = document.getElementById('last-name').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+
+    // Aquí puedes agregar la lógica para guardar los cambios en tu aplicación.
+
+    alert('Cambios guardados con éxito!');
+}
 
 
+
+// Agrega los event listeners a los botones
+document.querySelector('.btn[onclick="saveChanges()"]').addEventListener('click', saveChanges);
+document.querySelector('.btn.btn-logout').addEventListener('click', logout);
 
 
         function changePassword() {
             // Redirige a la página de creación
             window.location.href = 'http://127.0.0.1:5500/RolAdministrador/CambiarContrase%C3%B1a.html';
+        }
+
+        function logout() {
+            // Redirige a la página de creación
+            window.location.href = 'http://127.0.0.1:5500/RolAdministrador/LoginAdministrador.html';
         }
 
        
