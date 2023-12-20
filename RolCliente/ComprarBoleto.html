@@ -5,6 +5,7 @@
     <link rel="stylesheet" href="css/ComprarBoleto.css">
 </head>
 <body>
+    <br>
   
     <div class="navbar">
         <div class="menu">
@@ -26,16 +27,25 @@
    
     
       
-       <br><br><br><br>
+       <br><br><br><br><br>
        <div class="container">
-           <form id="paymentForm">
-               <input type="radio" id="creditCard" name="paymentMethod" value="creditCard">
-               <label for="creditCard">Tarjeta de Crédito/Débito</label><br>
-               <input type="radio" id="easyPay" name="paymentMethod" value="easyPay">
-               <label for="easyPay">Easy Pay</label><br><br>
-              
-           </form>
-       </div>
+        <br>
+        <form id="paymentForm">
+            <h2>Seleccione el método de pago</h2>
+            <br>
+            <div style="display: flex; align-items: center;">
+                <input type="radio" id="careditCard" name="paymentMethod" value="creditCard">
+                <label for="creditCard" style="margin-left: 10px;">Tarjeta de Crédito/Débito</label>
+            </div>
+            <br>
+            <div style="display: flex; align-items: center;">
+                <input type="radio" id="easyPay" name="paymentMethod" value="easyPay">
+                <label for="easyPay" style="margin-left: 10px;">Easy Pay</label>
+            </div>
+        </form>
+    </div>
+    
+    
  
        
        <!-- Formulario de Tarjeta de Crédito/Débito -->
@@ -56,11 +66,14 @@
                    <option value="V">Visa</option>
                    <option value="MC">MasterCard</option>
                </select><br>
-               <input type="checkbox" id="saveCard" name="saveCard">
-               <label for="saveCard">Guardar los datos de la tarjeta para futuras compras</label><br>
+               <div style="display: flex; align-items: center;">
+                <input type="checkbox" id="saveCard" name="saveCard">
+                <label for="saveCard" style="margin-left: 10px;">Guardar los datos de la tarjeta para futuras compras</label>
+            </div>
+            
                <br><b></b>
                <input type="submit" value="Procesar compra">
-               <br><br><br><br><br><br><br><br><br>
+               <br><br><br><br><br>
            </form>
        </div>
     </div>
@@ -78,7 +91,7 @@
                <label for="password">Contraseña:</label><br>
                <input type="password" id="password" name="password"><br>
                <input type="submit" value="Procesar compra">
-               <br><br><br><br><br><br><br><br><br>
+               <br><br><br><br><br>
            </form>
        </div>
     </div>

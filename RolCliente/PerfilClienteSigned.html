@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+<link rel="stylesheet" href="css/PerfilClienteSigned.css" />
+<body>
+
+
+  
+    <div class="navbar">
+        <div class="menu">
+          <a href="">Reservar vuelo</a>
+          <a href="#info">Información de vuelos</a>
+          <a href="#contacto">Contacto</a>
+          <a href="#FaQ">FaQs</a>
+          <a href="#aboutus">Sobre Nosotros</a>
+          
+    
+    
+    
+        </div>
+      </div>
+          
+       <br><br>
+    
+    
+
+    <div class="profile">
+        <div class="container">
+          
+            <div class="circle">
+                <img id="imagenVista" src="" alt="" />
+            </div>
+            <br>
+            <label for="imagen" id="labelImagen">Cargar imagen</label>
+            <input type="file" id="imagen" accept="image/*" style="display: none;" />
+            <div class="profile-info">
+                <br>
+              
+        
+
+
+                
+                <div class="row">
+                    <div class="col">
+                        <div class="input-field">
+                            <label for="name" class="icon"><i class="fas fa-user"></i></label>
+                            <input type="text" id="name" name="name" placeholder="Nombre" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-field">
+                            <label for="last-name" class="icon"><i class="fas fa-user"></i></label>
+                            <input type="text" id="last-name" name="last-name" placeholder="Apellidos" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="input-field">
+                            <label for="phone" class="icon"><i class="fas fa-phone"></i></label>
+                            <input type="text" id="phone" name="phone" placeholder="Teléfono" />
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-field">
+                            <label for="email" class="icon"><i class="fas fa-envelope"></i></label>
+                            <input type="email" id="email" name="email" placeholder="Correo Electrónico" />
+                        </div>
+                    </div>
+                </div>
+                <br>
+                
+                <div class="button-group">
+                    <button class="btn" onclick="saveChanges()">Guardar Cambios</button>
+                    <button class="btn" onclick="changePassword()">Cambiar Contraseña</button>
+                    <button class="btn btn-logout" onclick="logout()">Cerrar Sesión</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <br><br>
+
+<script>
+
+document.getElementById('imagen').addEventListener('change', function(e) {
+    var reader = new FileReader();
+    reader.onload = function() {
+        document.getElementById('imagenVista').src = reader.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);
+});
+
+
+function saveChanges() {
+    // Obtén los valores del formulario
+    var name = document.getElementById('name').value;
+    var lastName = document.getElementById('last-name').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+
+    // Aquí puedes agregar la lógica para guardar los cambios en tu aplicación.
+
+    alert('Cambios guardados con éxito!');
+}
+
+
+
+// Agrega los event listeners a los botones
+document.querySelector('.btn[onclick="saveChanges()"]').addEventListener('click', saveChanges);
+document.querySelector('.btn.btn-logout').addEventListener('click', logout);
+
+
+        function changePassword() {
+            // Redirige a la página de creación
+            window.location.href = 'http://127.0.0.1:5500/RolAdministrador/CambiarContrase%C3%B1a.html';
+        }
+
+        function logout() {
+            // Redirige a la página de creación
+            window.location.href = 'http://127.0.0.1:5500/RolAdministrador/LoginAdministrador.html';
+        }
+
+       
+
+
+</script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+    
+</body>
+</html>
