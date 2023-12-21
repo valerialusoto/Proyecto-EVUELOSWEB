@@ -1,0 +1,151 @@
+body {
+    font-family: Arial, sans-serif;
+
+    background-color: #f2f2f2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+}
+
+
+
+
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.toggleSwitch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    overflow: visible;
+    padding: 0;
+    cursor: pointer;
+    width: 300px; /* Ajusta el ancho según tus necesidades */
+    background-color: #fafafa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    user-select: none;
+}
+
+.toggleSwitch input {
+    position: absolute;
+    opacity: 0;
+    z-index: 5;
+}
+
+.toggleSwitch > span {
+    position: absolute;
+    left: 0;
+    width: calc(100% - 6px);
+    margin: 0;
+    text-align: left;
+    white-space: nowrap;
+    margin: 0 3px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggleSwitch > span span {
+    width: 48%; /* Ajusta el ancho de cada opción según tus necesidades */
+    text-align: center;
+    font-size: 0.9em;
+    line-height: 34px;
+}
+
+.toggleSwitch a {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    background-color: #666;
+    border-radius: 0 4px 4px 0;
+    transition: all 0.2s ease-out;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.toggleSwitch input:checked ~ a {
+    left: 0;
+    right: auto;
+}
+
+.toggleSwitch input:checked ~ span:before {
+    border-color: #0097D1;
+    box-shadow: inset 0 0 0 30px #0097D1;
+}
+
+.toggleSwitch input:checked ~ span span:first-of-type {
+    left: 0;
+    color: #999;
+}
+
+.toggleSwitch input:checked ~ span span:last-of-type {
+    color: #FFF;
+}
+
+#flightTable {
+    display: none;
+    margin-top: 20px;
+}
+
+table {
+    width: 90%; /* Ajusta este valor a tu gusto */
+    margin: 0 auto; /* Centra la tabla horizontalmente */
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+table th,
+table td {
+    border: 1px solid white;
+    padding: 8px;
+    text-align: left;
+}
+
+table th {
+    background-color: #434E5D;
+    color: white;
+}
+
+table td:last-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+/* NavBar */
+
+.navbar {
+    overflow: hidden;
+    background-color: #272f3f;
+    font-family: Arial;
+    width: 100%;
+    
+  }
+  
+  .navbar .menu {
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+  }
+  
+  .navbar a {
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a.right {
+    margin-left: auto;
+  }
